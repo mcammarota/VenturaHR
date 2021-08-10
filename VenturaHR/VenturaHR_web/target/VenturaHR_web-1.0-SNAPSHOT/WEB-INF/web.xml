@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403.jsp</location>
+    </error-page>
+    <security-constraint>
+        <display-name>Funções de Empresa</display-name>
+        <web-resource-collection>
+            <web-resource-name>Funções de Empresa</web-resource-name>
+            <description/>
+            <url-pattern>/empresa/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>empresa</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Funções de Candidato</display-name>
+        <web-resource-collection>
+            <web-resource-name>Funções de Candidato</web-resource-name>
+            <description/>
+            <url-pattern>/candidato/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>candidato</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Todos Usuários</display-name>
+        <web-resource-collection>
+            <web-resource-name>Área Comum a Todos os Usuários</web-resource-name>
+            <description/>
+            <url-pattern>/usuarios/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>Start</web-resource-name>
+            <description/>
+            <url-pattern>/index.jsp</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>empresa</role-name>
+            <role-name>candidato</role-name>
+            <role-name>administrador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>VenturaHR</realm-name>
+        <form-login-config>
+            <form-login-page>/home.jsp</form-login-page>
+            <form-error-page>/home.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description/>
+        <role-name>empresa</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>candidato</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>administrador</role-name>
+    </security-role>
+</web-app>

@@ -18,11 +18,11 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 //        response.setContentType("text/html;charset=UTF-8");
         
-        String caixaDeEntrada = "";
         String email = request.getRemoteUser();
         UsuarioService us = new UsuarioService();
         Usuario user = us.getByEmail(email);
         request.setAttribute("usuario", user);
+        String caixaDeEntrada = "";
         if(request.isUserInRole("empresa")){
             caixaDeEntrada = "/empresas/index.jsp";
         } else if (request.isUserInRole("candidato")){

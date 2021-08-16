@@ -14,7 +14,7 @@
         <web-resource-collection>
             <web-resource-name>Funções de Empresa</web-resource-name>
             <description/>
-            <url-pattern>/empresa/*</url-pattern>
+            <url-pattern>/empresas/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
@@ -28,7 +28,7 @@
         <web-resource-collection>
             <web-resource-name>Funções de Candidato</web-resource-name>
             <description/>
-            <url-pattern>/candidato/*</url-pattern>
+            <url-pattern>/candidatos/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>

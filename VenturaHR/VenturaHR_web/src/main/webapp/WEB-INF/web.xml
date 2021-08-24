@@ -5,11 +5,7 @@
             30
         </session-timeout>
     </session-config>
-    <error-page>
-        <error-code>403</error-code>
-        <location>/403.jsp</location>
-    </error-page>
-    <security-constraint>
+<!--    <security-constraint>
         <display-name>Funções de Empresa</display-name>
         <web-resource-collection>
             <web-resource-name>Funções de Empresa</web-resource-name>
@@ -79,5 +75,5 @@
     <security-role>
         <description/>
         <role-name>administrador</role-name>
-    </security-role>
+    </security-role>-->
 </web-app>

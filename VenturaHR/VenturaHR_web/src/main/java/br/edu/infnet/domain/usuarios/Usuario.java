@@ -1,15 +1,29 @@
 package br.edu.infnet.domain.usuarios;
 
 public class Usuario {
-    String nome;
-    String telefone;
-    String cpf;
-    String email;
-    String senha;
-    String endereco;
-    String razaoSocial;
-    String cnpj;
+    
+    private int id;
+    private String nome;
+    private String telefone;
+    private String cpf;
+    private String email;
+    private String senha;
+    private String endereco;
+    private String razaoSocial;
+    private String cnpj;
+    private char tipo;
+    public static final char ADMIN = 'A';
+    public static final char CANDIDATO = 'C';
+    public static final char EMPRESA = 'E';
+    
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -72,5 +86,13 @@ public class Usuario {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+    
+     public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
 }

@@ -62,17 +62,17 @@ span.psw {
 
     <h1 style="text-align: center">VenturaHR</h1>
 
-<form action="j_security_check" method="post">
+<form action="usuarios/login" method="post">
   <div class="imgcontainer">
     <img src="https://www.assespro-rs.org.br/site/wp-content/uploads/recursos-humanos-digital-1200x500.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label for="email"><b>E-mail:</b></label>
-    <input type="text" placeholder="Entre com o e-mail" name="j_username">
+    <input type="text" placeholder="Entre com o e-mail" name="email">
 
     <label for="senha"><b>Senha:</b></label>
-    <input type="password" placeholder="Entre com a senha" name="j_password">
+    <input type="password" placeholder="Entre com a senha" name="senha">
         
     <button type="submit">Login</button>
     <br>

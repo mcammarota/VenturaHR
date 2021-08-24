@@ -1,9 +1,11 @@
 package br.edu.infnet.app.usuarios;
 
 import br.edu.infnet.domain.usuarios.Usuario;
+import br.edu.infnet.domain.vagas.Vaga;
 import br.edu.infnet.infra.usuarios.UsuarioService;
+import br.edu.infnet.infra.vagas.VagaService;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,16 +18,20 @@ public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
         
-        String email = request.getRemoteUser();
+//        String email = request.getRemoteUser();
+        String email = request.getParameter("email");
         UsuarioService us = new UsuarioService();
         Usuario user = us.getByEmail(email);
         request.setAttribute("usuario", user);
         String caixaDeEntrada = "";
-        if(request.isUserInRole("empresa")){
+        if(user.getTipo() == Usuario.EMPRESA){
+            VagaService vs = new VagaService();
+            List<Vaga> vagas = vs.getByIdUsuario(user.getId());
+            request.setAttribute("vagas", vagas);
             caixaDeEntrada = "/empresas/index.jsp";
-        } else if (request.isUserInRole("candidato")){
+//        } else if (request.isUserInRole("candidato")){
+        } else if (user.getTipo() == Usuario.CANDIDATO){
             caixaDeEntrada = "/candidatos/index.jsp";
         } else {
             caixaDeEntrada = "/administradores/index.jsp";

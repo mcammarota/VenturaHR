@@ -1,7 +1,7 @@
 
-package br.edu.infnet.infra.vagas;
+package br.edu.infnet.infra;
 
-import br.edu.infnet.domain.vagas.Vaga;
+import br.edu.infnet.domain.Vaga;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.core.MediaType;

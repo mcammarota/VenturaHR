@@ -1,4 +1,4 @@
-package br.edu.infnet.domain.usuarios;
+package br.edu.infnet.domain;
 
 public class Usuario {
     

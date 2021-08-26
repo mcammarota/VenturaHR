@@ -7,28 +7,31 @@
         <title>VenturaHR - Empresa</title>
     </head>
     <body>
-        <h1>Empresas</h1>
-        <h2>Bem Vindo ${usuario.nome}</h2>
+        <h1>Campo de Empresa</h1>
+        <h2>Bem Vindo, ${usuario.nome}!</h2>
         <c:if test="${not empty vagas}">
-            <table style="width: 100%">
-                <tr>
-                    <th>Cargo</th>
-                    <th>Cidade</th>
-                    <th>Critérios</th>
-                </tr>
-                <c:forEach var="vaga" items="${vagas}">
+            <table border="1" cellpadding="3" cellspacing="0">
+                <thead>
                     <tr>
-                        <td>${vaga.cargo}</td>
-                        <td>${vaga.cidade}</td>
-                        <td>
-                            <c:forEach var="criterio" items="${vaga.criterioList}">
-                                ${criterio.descricao}
-                                <br>
-                            </c:forEach>
-                        </td>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Critérios</th>
                     </tr>
-                </c:forEach>
-            </table>
+                </thead>
+                <tbody>
+                    <c:forEach var="vaga" items="${vagas}">
+                        <tr>
+                            <td>${vaga.cargo}</td>
+                            <td>${vaga.cidade}</td>
+                            <td>
+                                <c:forEach var="criterio" items="${vaga.criterioList}">
+                                    ${criterio.descricao} <br>      
+                                </c:forEach>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>   
+            </table>   
         </c:if>
     </body>
 </html>

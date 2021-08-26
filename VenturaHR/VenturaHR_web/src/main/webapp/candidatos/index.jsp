@@ -7,7 +7,7 @@
         <title>VenturaHR</title>
     </head>
     <body>
-        <h1>Candidato</h1>
+        <h1>Campo de Candidato</h1>
         <h2>Bem Vindo ${usuario.nome}</h2>
     </body>
 </html>

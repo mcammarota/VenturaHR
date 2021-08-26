@@ -1,6 +1,6 @@
-package br.edu.infnet.infra.usuarios;
+package br.edu.infnet.infra;
 
-import br.edu.infnet.domain.usuarios.Usuario;
+import br.edu.infnet.domain.Usuario;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.Entity;

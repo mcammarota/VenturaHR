@@ -1,5 +1,5 @@
 
-package br.edu.infnet.domain.vagas;
+package br.edu.infnet.domain;
 
 import java.util.List;
 

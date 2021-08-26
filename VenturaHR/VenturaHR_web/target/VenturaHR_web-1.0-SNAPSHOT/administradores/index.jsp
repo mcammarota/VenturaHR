@@ -6,7 +6,7 @@
         <title>VenturaHR</title>
     </head>
     <body>
-        <h1>Empresa</h1>
+        <h1>Campo de Administrador</h1>
         <h2>Bem Vindo ${usuario.nome}</h2>
     </body>
 </html>

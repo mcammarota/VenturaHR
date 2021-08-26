@@ -39,7 +39,7 @@ public class UsuarioController {
         ResponseEntity retorno = ResponseEntity.notFound().build();
         
         try{
-            Usuario usuario = usuarioRepository.findyByEmail(email);
+            Usuario usuario = usuarioRepository.findByEmail(email);
         
             if(usuario != null){
             

@@ -1,9 +1,9 @@
-package br.edu.infnet.app.usuarios;
+package br.edu.infnet.app;
 
-import br.edu.infnet.domain.usuarios.Usuario;
-import br.edu.infnet.domain.vagas.Vaga;
-import br.edu.infnet.infra.usuarios.UsuarioService;
-import br.edu.infnet.infra.vagas.VagaService;
+import br.edu.infnet.domain.Usuario;
+import br.edu.infnet.domain.Vaga;
+import br.edu.infnet.infra.UsuarioService;
+import br.edu.infnet.infra.VagaService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;

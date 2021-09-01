@@ -24,7 +24,7 @@ public class VagaController {
     private VagaRepository vagaRepository;
     
     @GetMapping(path = "/usuario/{idUsuario}")
-    public ResponseEntity listarPorIdUsuario(@PathVariable int idUsuario){
+    public ResponseEntity getByUser(@PathVariable int idUsuario){
         
         ResponseEntity retorno = ResponseEntity.notFound().build();
         try{
@@ -40,7 +40,7 @@ public class VagaController {
     }
     
     @GetMapping(path = "/cargo/{pesquisa}")
-    public ResponseEntity pesquisarVagasPorCargo(@PathVariable String pesquisa){
+    public ResponseEntity getByJob(@PathVariable String pesquisa){
         
         ResponseEntity retorno = ResponseEntity.notFound().build();
         try{
@@ -56,7 +56,7 @@ public class VagaController {
     }
     
     @GetMapping(path = "/cidade/{pesquisa}")
-    public ResponseEntity pesquisarVagasPorCidade(@PathVariable String pesquisa){
+    public ResponseEntity getByCity(@PathVariable String pesquisa){
         
         ResponseEntity retorno = ResponseEntity.notFound().build();
         try{

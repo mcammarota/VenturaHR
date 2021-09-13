@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/usuarios/login"})
+@WebServlet(urlPatterns = {"/usuarios"})
 public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             List<Vaga> vagas = vs.getByIdUsuario(user.getId());
             request.setAttribute("vagas", vagas);
             caixaDeEntrada = "/empresas/index.jsp";
+
 //        } else if (request.isUserInRole("candidato")){
         } else if (user.getTipo() == Usuario.CANDIDATO){
             caixaDeEntrada = "/candidatos/index.jsp";
@@ -39,6 +40,7 @@ public class LoginServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher(caixaDeEntrada);
         rd.forward(request, response);
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

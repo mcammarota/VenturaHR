@@ -6,7 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>VenturaHR</title>
     </head>
-    <body>
+    <body style="background-color: lightcyan">
+       
         <h1>Campo de Candidato</h1>
         <h2>Bem Vindo ${usuario.nome}</h2>
     </body>

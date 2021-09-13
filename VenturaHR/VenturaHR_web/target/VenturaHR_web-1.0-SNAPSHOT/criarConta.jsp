@@ -14,7 +14,7 @@
 <body style="background-color: lightcyan">
     <div class="container">
         <h2 style="text-align: center">Cadastramento de Usuário</h2><br>
-        <form class="form-horizontal" action="usuarios/login" method="post">
+        <form class="form-horizontal" action="home.jsp" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nome">Nome:</label>
                 <div class="col-sm-10">

@@ -62,7 +62,7 @@ span.psw {
 
     <h1 style="text-align: center">VenturaHR</h1>
 
-<form action="usuarios/login" method="post">
+<form action="usuarios" method="post">
   <div class="imgcontainer">
     <img src="https://www.assespro-rs.org.br/site/wp-content/uploads/recursos-humanos-digital-1200x500.png" alt="Avatar" class="avatar">
   </div>

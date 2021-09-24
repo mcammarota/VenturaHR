@@ -36,8 +36,6 @@
             </table>   
         </c:if>
         <br>
-        <form action="empresas/publicarVaga.jsp">
-            <button type="submit" class="btn btn-black" >Publicar Vaga</button>
-        </form>
+        <a href="/publicarVaga" class="button">Publicar Vaga</a>
     </body>
 </html>

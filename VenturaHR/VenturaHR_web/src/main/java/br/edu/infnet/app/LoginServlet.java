@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-//        String email = request.getRemoteUser();
         String email = request.getParameter("email");
         UsuarioService us = new UsuarioService();
         Usuario user = us.getByEmail(email);
@@ -31,7 +30,6 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("vagas", vagas);
             caixaDeEntrada = "/empresas/index.jsp";
 
-//        } else if (request.isUserInRole("candidato")){
         } else if (user.getTipo() == Usuario.CANDIDATO){
             caixaDeEntrada = "/candidatos/index.jsp";
         } else {

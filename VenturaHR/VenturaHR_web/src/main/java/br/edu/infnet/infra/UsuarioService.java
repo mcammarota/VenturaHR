@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 
 public class UsuarioService {
     
-    private final String REST_URI = "http://localhost:5000/usuarios";
+    private final String REST_URI = "http://localhost:8081/usuarios";
     private final Client client = ClientBuilder.newClient();
     
     public Usuario getByEmail(String email){

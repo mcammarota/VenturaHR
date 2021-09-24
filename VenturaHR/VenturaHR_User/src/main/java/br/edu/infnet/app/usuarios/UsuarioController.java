@@ -3,6 +3,7 @@ package br.edu.infnet.app.usuarios;
 import br.edu.infnet.domain.usuarios.Usuario;
 import br.edu.infnet.infra.usuarios.UsuarioRepository;
 import java.net.URI;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,14 @@ public class UsuarioController {
     
     @Autowired
     private UsuarioRepository usuarioRepository;
+    
+    @GetMapping(path = "/todos-usuarios")
+    public ResponseEntity listarUsuarios(){
+        
+        List<Usuario> lista = (List<Usuario>) usuarioRepository.findAll();
+        
+        return ResponseEntity.ok().body(lista);
+    }
     
     @GetMapping(path = "/{id}")
     public ResponseEntity getById(@PathVariable int id){

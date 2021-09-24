@@ -11,6 +11,11 @@
         <h1>Campo de Empresa</h1>
         <h2>Bem Vindo, ${usuario.nome}!</h2>
         <h3>Vagas publicadas:</h3>
+        
+        <c:if test="${empty vagas}">
+        <h3>Não há vagas publicadas!</h3>
+        </c:if>
+        
         <c:if test="${not empty vagas}">
             <table border="1" cellpadding="3" cellspacing="0">
                 <thead>
@@ -36,6 +41,8 @@
             </table>   
         </c:if>
         <br>
-        <a href="/publicarVaga" class="button">Publicar Vaga</a>
+        <form action="empresas/publicarVaga.jsp">
+            <button type="submit" class="btn btn-black" >Publicar Vaga</button>
+        </form>
     </body>
 </html>

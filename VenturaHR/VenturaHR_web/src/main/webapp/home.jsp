@@ -81,11 +81,11 @@ span.psw {
 
 </form>
 
-    <!-- <div class="imgcontainer"> 
+<div class="imgcontainer"> 
     <form action="criarConta.jsp">
         <button type="submit" style="background-color: blue">Criar Conta</button>
     </form>
-</div> -->
+</div>
     
 </body>
 </html>

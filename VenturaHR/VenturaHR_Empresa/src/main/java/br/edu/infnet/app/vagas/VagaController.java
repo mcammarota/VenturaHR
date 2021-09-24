@@ -23,6 +23,14 @@ public class VagaController {
     @Autowired
     private VagaRepository vagaRepository;
     
+    @GetMapping(path = "/todas-vagas")
+    public ResponseEntity listarVagas(){
+        
+        List<Vaga> lista = (List<Vaga>) vagaRepository.findAll();
+        
+        return ResponseEntity.ok().body(lista);
+    }
+    
     @GetMapping(path = "/usuario/{idUsuario}")
     public ResponseEntity getByUser(@PathVariable int idUsuario){
         

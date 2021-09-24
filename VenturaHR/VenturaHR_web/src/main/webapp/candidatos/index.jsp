@@ -1,14 +1,45 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>VenturaHR</title>
+        <title>VenturaHR - Candidato</title>
     </head>
     <body style="background-color: lightcyan">
-       
+        
         <h1>Campo de Candidato</h1>
-        <h2>Bem Vindo ${usuario.nome}</h2>
+        <h2>Bem Vindo, ${usuario.nome}!</h2>
+        <h3>Todas as vagas publicadas:</h3>
+        
+        <c:if test="${empty vagas}">
+        <h3>Não há vagas publicadas!</h3>
+        </c:if>
+        
+        <c:if test="${not empty vagas}">
+            <table border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Critérios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="vaga" items="${vagas}">
+                        <tr>
+                            <td>${vaga.cargo}</td>
+                            <td>${vaga.cidade}</td>
+                            <td>
+                                <c:forEach var="criterio" items="${vaga.criterioList}">
+                                    ${criterio.descricao} <br>      
+                                </c:forEach>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>   
+            </table>   
+        </c:if>
+        <br>
     </body>
 </html>

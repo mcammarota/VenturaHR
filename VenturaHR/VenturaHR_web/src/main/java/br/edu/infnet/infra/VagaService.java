@@ -23,6 +23,15 @@ public class VagaService {
                 .get(List.class);
     }
     
+    public List<Vaga> listarTodasVagas(){
+        
+        return client
+                .target(REST_URI)
+                .path("todas-vagas")
+                .request(MediaType.APPLICATION_JSON)
+                .get(List.class);
+    }
+    
     public Vaga criarVaga(Vaga vaga){
         
         return client

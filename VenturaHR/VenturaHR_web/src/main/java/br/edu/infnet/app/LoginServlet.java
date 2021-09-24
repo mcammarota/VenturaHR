@@ -24,16 +24,25 @@ public class LoginServlet extends HttpServlet {
         Usuario user = us.getByEmail(email);
         request.setAttribute("usuario", user);
         String caixaDeEntrada = "";
+        VagaService vs = new VagaService();
+        
         if(user.getTipo() == Usuario.EMPRESA){
-            VagaService vs = new VagaService();
+            
             List<Vaga> vagas = vs.getByIdUsuario(user.getId());
             request.setAttribute("vagas", vagas);
             caixaDeEntrada = "/empresas/index.jsp";
 
         } else if (user.getTipo() == Usuario.CANDIDATO){
+            
+            List<Vaga> vagas = vs.listarTodasVagas();
+            request.setAttribute("vagas", vagas);
             caixaDeEntrada = "/candidatos/index.jsp";
+            
         } else {
-            caixaDeEntrada = "/administradores/index.jsp";
+            
+            List<Usuario> usuarios = us.listarUsuarios();
+            request.setAttribute("usuarios", usuarios);
+            caixaDeEntrada = "/admin/index.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(caixaDeEntrada);
         rd.forward(request, response);

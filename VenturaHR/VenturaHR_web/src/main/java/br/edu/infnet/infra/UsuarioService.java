@@ -5,10 +5,11 @@ import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.core.MediaType;
+import java.util.List;
 
 public class UsuarioService {
     
-    private final String REST_URI = "http://localhost:8081/usuarios";
+    private final String REST_URI = "http://localhost:5000/usuarios";
     private final Client client = ClientBuilder.newClient();
     
     public Usuario getByEmail(String email){
@@ -19,6 +20,15 @@ public class UsuarioService {
                 .path(email)
                 .request(MediaType.APPLICATION_JSON)
                 .get(Usuario.class);
+    }
+    
+    public List<Usuario> listarUsuarios(){
+        
+        return client
+                .target(REST_URI)
+                .path("todos-usuarios")
+                .request(MediaType.APPLICATION_JSON)
+                .get(List.class);
     }
     
     public Usuario criarConta(Usuario usuario){

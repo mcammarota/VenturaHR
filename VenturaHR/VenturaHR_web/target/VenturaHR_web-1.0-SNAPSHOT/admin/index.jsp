@@ -5,29 +5,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>VenturaHR - Admin</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     </head>
     <body style="background-color: lightcyan">
         
-        <h1>Campo de Administrador</h1>
-        <h2>Bem Vindo, ${usuario.nome}!</h2>
-        <h3>Todos os usuários cadastrados:</h3>
+        <br>
+        <h1 style="text-align: center">Campo de Administrador</h1>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;Bem Vindo, ${usuario.nome}!</h2>
+        <br>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Usuários cadastrados no VenturaHR:</h3>
+        <br>
         
-        <c:if test="${empty usuarios}">
-        <h3>Não há usuários cadastrados!</h3>
-        </c:if>
-        
-        <c:if test="${not empty usuarios}">
-            <table class="table table-striped" border="1">
+        <div class="container mb-3 mt-3">
+            <c:if test="${empty usuarios}">
+                <h3>Não há usuários cadastrados!</h3>
+            </c:if>
+            <c:if test="${not empty usuarios}">
+            <table id="tableUsuarios" class="table table-striped table-bordered" style="width:80%">
                 <thead>
                     <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">Tipo</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,9 +43,30 @@
                         <td>${user.tipo}</td>
                     </tr>
                 </c:forEach>
-                </tbody>   
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>CPF</th>
+                        <th>CNPJ</th>
+                        <th>Tipo</th>
+                    </tr>
+                </tfoot>
             </table>   
         </c:if>
-        <br>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                     $('#tableUsuarios').dataTable();
+            } );
+        </script>
     </body>
 </html>

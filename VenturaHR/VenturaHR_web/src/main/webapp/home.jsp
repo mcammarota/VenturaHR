@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -59,6 +60,8 @@ span.psw {
 </style>
 </head>
 <body style="background-color: lightcyan">
+    
+    <c:import url="/menu.jsp"/>
 
     <h1 style="text-align: center">VenturaHR</h1>
 
@@ -80,12 +83,6 @@ span.psw {
   </div>
 
 </form>
-
-<div class="imgcontainer"> 
-    <form action="criarConta.jsp">
-        <button type="submit" style="background-color: blue">Criar Conta</button>
-    </form>
-</div>
     
 </body>
 </html>

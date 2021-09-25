@@ -51,7 +51,7 @@ public class VagaServlet extends HttpServlet {
             request.setAttribute("vaga", vagaPublicada);
         }
         
-        RequestDispatcher rd = request.getRequestDispatcher("/empresa/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("usuarios");
         rd.forward(request, response);
     }
 

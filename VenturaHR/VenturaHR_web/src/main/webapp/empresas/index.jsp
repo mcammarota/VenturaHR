@@ -3,26 +3,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <title>VenturaHR - Empresa</title>
     </head>
     <body style="background-color: lightcyan">
         
-        <h1>Campo de Empresa</h1>
-        <h2>Bem Vindo, ${usuario.nome}!</h2>
-        <h3>Vagas publicadas:</h3>
+        <br>
+        <h1 style="text-align: center">Campo de Candidato</h1>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;Bem Vindo, ${usuario.nome}!</h2>
+        <br>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;Vagas publicadas por ${usuario.nome} no VenturaHR:</h3>
+        <br>
         
+        <div class="container mb-3 mt-3">
         <c:if test="${empty vagas}">
         <h3>Não há vagas publicadas!</h3>
         </c:if>
         
         <c:if test="${not empty vagas}">
-            <table border="1" cellpadding="3" cellspacing="0">
+            <table id="tableVagas" class="table table-striped table-bordered" style="width:80%">
                 <thead>
                     <tr>
-                        <th scope="col">Cargo</th>
-                        <th scope="col">Cidade</th>
-                        <th scope="col">Critérios</th>
+                        <th>Cargo</th>
+                        <th>Cidade</th>
+                        <th>Critérios</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,12 +44,31 @@
                             </td>
                         </tr>
                     </c:forEach>
-                </tbody>   
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Cargo</th>
+                        <th>Cidade</th>
+                        <th>Critérios</th>
+                    </tr>
+                </tfoot>
             </table>   
         </c:if>
-        <br>
-        <form action="empresas/publicarVaga.jsp">
-            <button type="submit" class="btn btn-black" >Publicar Vaga</button>
-        </form>
+        </div>
+        
+        <center><a href="empresas/publicarVaga.jsp">Publicar Vaga</a></center>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                     $('#tableVagas').dataTable();
+            } );
+        </script>
+        
     </body>
 </html>

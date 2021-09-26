@@ -10,7 +10,7 @@
         <title>VenturaHR - Empresa</title>
     </head>
     <body style="background-color: lightcyan">
-        
+
         <br>
         <h1 style="text-align: center">Campo de Candidato</h1>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;Bem Vindo, ${usuario.nome}!</h2>
@@ -30,6 +30,8 @@
                         <th>Cargo</th>
                         <th>Cidade</th>
                         <th>Critérios</th>
+                        <th>Perfil</th>
+                        <th>Peso</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +44,16 @@
                                     ${criterio.descricao} <br>      
                                 </c:forEach>
                             </td>
+                            <td>
+                                <c:forEach var="criterio" items="${vaga.criterioList}">
+                                    ${criterio.perfil} <br>      
+                                </c:forEach>
+                            </td>
+                            <td>
+                                <c:forEach var="criterio" items="${vaga.criterioList}">
+                                    ${criterio.peso} <br>      
+                                </c:forEach>
+                            </td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -50,6 +62,8 @@
                         <th>Cargo</th>
                         <th>Cidade</th>
                         <th>Critérios</th>
+                        <th>Perfil</th>
+                        <th>Peso</th>
                     </tr>
                 </tfoot>
             </table>   

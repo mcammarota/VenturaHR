@@ -1,0 +1,5 @@
+##### Coisas que faltaram e eu gostaria de ter implementado no meu VenturaHR ####
+
+* Conseguir publicar vaga -> apenas consegui chegar até a página "publicarVaga.jsp" mas não consegui realizar a publicação efetiva da vaga
+
+* 

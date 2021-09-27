@@ -16,6 +16,10 @@ public class Usuario {
     public static final char CANDIDATO = 'C';
     public static final char EMPRESA = 'E';
     
+    public Usuario(){
+        
+    }
+    
     public int getId() {
         return id;
     }

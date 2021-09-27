@@ -1,6 +1,0 @@
-##### Coisas que faltaram e eu gostaria de ter implementado no meu VenturaHR ####
-
-* Cadastrar usuário -> apenas consegui chegar até a página "criarConta.jsp".
-Ao fazer o debug, o erro está acontecendo na linah 37 do UsuarioServlet (no momento de criar a vaga)
-
-* Publicar vaga -> apenas consegui chegar até a página "publicarVaga.jsp", mas não consegui realizar a publicação efetiva da vaga
